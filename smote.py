@@ -6,6 +6,7 @@
 import random
 from sklearn.neighbors import NearestNeighbors
 import numpy as np
+import copy
 
 class Smote(object):
     '''
@@ -17,7 +18,7 @@ class Smote(object):
         '''
         Constructor
         '''
-        self.samples=samples
+        self.samples=copy.deepcopy(samples)
         self.T,self.numattrs=self.samples.shape
         self.N=N
         self.k=k
